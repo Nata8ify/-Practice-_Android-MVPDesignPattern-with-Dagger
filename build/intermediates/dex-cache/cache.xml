@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\PNattawut\Desktop\MVPPattern\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="C:\Users\PNattawut\Desktop\MVPPattern\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_a4dcdcf1d6baca57c533ed3c2abb1e12d4598760\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\PNattawut\Desktop\MVPPattern\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="2f2f318a2bf44bf6126db05d6c5e8f982c5b1cfc">
+        <dex dex="C:\Users\PNattawut\Desktop\MVPPattern\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_94a8ad8c101932978f518d23da0c5ced16ed3abd\classes.dex" />
+    </item>
+
+</items>

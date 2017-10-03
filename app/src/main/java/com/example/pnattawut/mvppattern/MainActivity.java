@@ -1,7 +1,7 @@
 package com.example.pnattawut.mvppattern;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import com.example.pnattawut.mvppattern.model.Thing;
@@ -18,13 +18,16 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
         txtThingTextView = (TextView)findViewById(R.id.txtThing);
-        presenter = new MainPresenter(this);
+        presenter = new MainPresenter(this, this);
         presenter.saveThing(new Thing(){{
             setMarkInt(1);
             setName("Mars");
             setForm("Planet");
         }});
+        presenter.loadOnlineThings();
         showThing(presenter.loadThing());
         showHello(presenter.loadThing().getName());
         presenter.saveThing(null); // <-- MAKE Thing is Nothing!

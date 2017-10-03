@@ -3,6 +3,24 @@
 
     <item
         is-multidex="true"
+        jar="C:\Users\PNattawut\Desktop\MVPPattern\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="b7288fd644d256984e5458fb8a294b9d988f1fc5">
+        <dex dex="C:\Users\PNattawut\Desktop\MVPPattern\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_94a8ad8c101932978f518d23da0c5ced16ed3abd\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\PNattawut\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.8.2\3edcfe49d2c6053a70a2a47e4e1c2f94998a49cf\gson-2.8.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="3edcfe49d2c6053a70a2a47e4e1c2f94998a49cf">
+        <dex dex="C:\Users\PNattawut\Desktop\MVPPattern\app\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.8.2_950ce7d4f9632b609dcc51b9adecd1365a69fac6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="C:\Users\PNattawut\Desktop\MVPPattern\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
@@ -12,12 +30,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\PNattawut\Desktop\MVPPattern\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jar="C:\Users\PNattawut\.android\build-cache\039eb970af4aa9295cf54cf7e4ac99fc76bb990d\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.1"
-        sha1="2f2f318a2bf44bf6126db05d6c5e8f982c5b1cfc">
-        <dex dex="C:\Users\PNattawut\Desktop\MVPPattern\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_94a8ad8c101932978f518d23da0c5ced16ed3abd\classes.dex" />
+        sha1="2cd4b982617e544728de0782d718a58ce1b06e3f">
+        <dex dex="C:\Users\PNattawut\Desktop\MVPPattern\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_4d33bbc33008b6a33865cc35bae046bd75c5387d\classes.dex" />
     </item>
 
 </items>

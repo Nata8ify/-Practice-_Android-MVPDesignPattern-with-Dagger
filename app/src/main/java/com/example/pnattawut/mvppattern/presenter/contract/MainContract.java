@@ -2,6 +2,8 @@ package com.example.pnattawut.mvppattern.presenter.contract;
 
 import com.example.pnattawut.mvppattern.model.Thing;
 
+import java.util.List;
+
 /**
  * Created by PNattawut on 01-Oct-17.
  */
@@ -17,5 +19,6 @@ public interface MainContract {
         void saveThing(Thing thing);
         Thing loadThing();
         void deleteThing();
+        List<Thing> loadOnlineThings();
     }
 }

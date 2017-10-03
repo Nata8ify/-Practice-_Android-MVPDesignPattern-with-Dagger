@@ -60,8 +60,7 @@ public class MainPresenter implements MainContract.Presenter {
                     public void onResponse(String response) {
                         Log.d("$!!", response);
                         onlieThings = new Gson().fromJson(response, TypeToken.getParameterized(ArrayList.class, Thing.class).getType());
-                        Log.d("$$!", onlieThings.get(0).toString());
-                        view.showThing(onlieThings.get(0));
+                        view.showThing(onlieThings.get(2));
                     }
                 }, new Response.ErrorListener() {
                     @Override

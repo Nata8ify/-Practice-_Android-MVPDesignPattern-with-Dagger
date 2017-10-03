@@ -12,6 +12,7 @@ public interface MainContract {
     interface View {
         void showHello(String thing);
         void showThing(Thing thing);
+        void showThings(List<Thing> things);
         void showError(String err);
     }
 

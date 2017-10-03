@@ -2,9 +2,9 @@ package com.example.pnattawut.mvppattern;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,32 +33,11 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         //setContentView(R.layout.activity_main);
         recycleView = new RecyclerView(this);
         recycleView.setLayoutManager(new LinearLayoutManager(this));
-        thingRecyclerAdapter = new RecyclerView.Adapter<ThingViewHolder>(){
-            @Override
-            public ThingViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-                View thingCard = LayoutInflater.from(parent.getContext())
-                        .inflate(R.layout.activity_main, parent, false);
-                return new ThingViewHolder(thingCard);
-            }
-
-            @Override
-            public void onBindViewHolder(ThingViewHolder holder, int position) {
-
-            }
-
-            @Override
-            public int getItemCount() {
-                return 2000;
-            }
-        };
-        recycleView.setAdapter(thingRecyclerAdapter);
-        setContentView(recycleView);
-
-
         txtThingNameTextView = (TextView) findViewById(R.id.txtThing);
         txtThingTypeFormTextView = (TextView) findViewById(R.id.txtType);
         imgThing = (ImageView) findViewById(R.id.imgThing);
-
+        presenter = new MainPresenter(this, this);
+        presenter.loadOnlineThings();
     }
 
     @Override
@@ -83,6 +62,41 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     }
 
     @Override
+    public void showThings(final List<Thing> things) {
+        Log.d("$$$$", things.toString());
+        thingRecyclerAdapter = new RecyclerView.Adapter<ThingViewHolder>() {
+
+            @Override
+            public ThingViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+                View thingCard = LayoutInflater.from(parent.getContext())
+                        .inflate(R.layout.activity_main, parent, false);
+                return new ThingViewHolder(thingCard);
+            }
+
+            @Override
+            public void onBindViewHolder(ThingViewHolder holder, int position) {
+                if (things == null) {
+                    return;
+                }
+                Picasso.with(getApplicationContext()).load(things.get(position).getUrl()).into(holder.imgThing);
+                holder.txtThingNameTextView.setText(things.get(position).getMarkInt()+" "+things.get(position).getName());
+                holder.txtThingTypeFormTextView.setText(things.get(position).getType().concat(" (").concat(things.get(position).getForm()).concat(")"));
+            }
+
+            @Override
+            public int getItemCount() {
+                if (things == null) {
+                    return 0;
+                } else {
+                    return things.size();
+                }
+            }
+        };
+        recycleView.setAdapter(thingRecyclerAdapter);
+        setContentView(recycleView);
+    }
+
+    @Override
     public void showError(String err) {
         txtThingNameTextView.setText(err);
     }
@@ -91,8 +105,16 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
 
 
     class ThingViewHolder extends RecyclerView.ViewHolder {
+        TextView txtThingNameTextView;
+        TextView txtThingTypeFormTextView;
+        ImageView imgThing;
+
         public ThingViewHolder(View itemView) {
             super(itemView);
+            txtThingNameTextView = (TextView) itemView.findViewById(R.id.txtThing);
+            txtThingTypeFormTextView = (TextView) itemView.findViewById(R.id.txtType);
+            imgThing = (ImageView) itemView.findViewById(R.id.imgThing);
         }
+
     }
 }

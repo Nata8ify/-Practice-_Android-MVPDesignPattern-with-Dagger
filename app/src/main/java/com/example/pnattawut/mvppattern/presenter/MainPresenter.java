@@ -52,6 +52,7 @@ public class MainPresenter implements MainContract.Presenter {
     }
 
     private List<Thing> onlieThings;
+
     @Override
     public List<Thing> loadOnlineThings() {
         Volley.newRequestQueue(context)
@@ -60,7 +61,8 @@ public class MainPresenter implements MainContract.Presenter {
                     public void onResponse(String response) {
                         Log.d("$!!", response);
                         onlieThings = new Gson().fromJson(response, TypeToken.getParameterized(ArrayList.class, Thing.class).getType());
-                        view.showThing(onlieThings.get(2));
+                        //view.showThing(onlieThings.get(2));
+                        view.showThings(onlieThings);
                     }
                 }, new Response.ErrorListener() {
                     @Override

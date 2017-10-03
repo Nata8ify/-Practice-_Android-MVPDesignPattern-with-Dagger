@@ -61,6 +61,7 @@ public class MainPresenter implements MainContract.Presenter {
                         Log.d("$!!", response);
                         onlieThings = new Gson().fromJson(response, TypeToken.getParameterized(ArrayList.class, Thing.class).getType());
                         Log.d("$$!", onlieThings.get(0).toString());
+                        view.showThing(onlieThings.get(0));
                     }
                 }, new Response.ErrorListener() {
                     @Override
@@ -68,6 +69,6 @@ public class MainPresenter implements MainContract.Presenter {
                         Log.d("$!!", error.getMessage());
                     }
                 }));
-        return null;
+        return onlieThings;
     }
 }
